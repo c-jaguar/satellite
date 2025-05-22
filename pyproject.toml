@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "satellites"
+version = "0.1.0"
+description = ""
+authors = ["azhidkikh <azhidkikh@numedy.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.0.2"
+pandas = "^2.2.3"
+skyfield = "^1.49"
+pathlib = "^1.0.1"
+pydantic = "^2.11.4"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.280"
+typing-inspection = "^0.4.1"
+
+[tool.ruff]
+select = ["ALL"]  # Все правила
+ignore = ["D", "ANN101", "ANN102", "F821", "DTZ", "N999", "RUF001", "TD", "FIX002", "PTH"]  # Исключены
+
+fixable = ["ALL"]  # Подлежащие автофиксу
+unfixable = []
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "alembic",
+    '.mypy_cache',
+    ".yml",
+    ".md",
+    "database"
+]
+
+line-length = 120  # Длина строки
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+target-version = "py312"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
